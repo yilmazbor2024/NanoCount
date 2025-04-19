@@ -8,12 +8,13 @@
     <string name="title_login">Giriş</string>
     <string name="title_inventory_new">Yeni Sayım</string>
     <string name="title_inventory_detail">Sayım Detay</string>
-    <string name="title_inventory_scan">Barkod Okut</string>
+    <string name="title_inventory_scan">Sayım Tarama</string>
     <string name="title_products">Ürünler</string>
     <string name="title_product_import">Ürün İçe Aktar</string>
     <string name="title_product_new">Yeni Ürün</string>
     <string name="title_locations">Lokasyonlar</string>
     <string name="title_users">Kullanıcılar</string>
+    <string name="title_barcode_scanner">Barkod Tarama</string>
     
     <!-- Giriş Ekranı -->
     <string name="hint_username">Kullanıcı Adı</string>
@@ -64,4 +65,14 @@
     <string name="btn_export">Dışa Aktar</string>
     <string name="message_success">İşlem başarılı</string>
     <string name="message_error">Hata oluştu</string>
+    
+    <!-- Yeni eklenen stringler -->
+    <string name="hint_barcode">Barkod</string>
+    <string name="btn_search">ARA</string>
+    <string name="btn_scan_camera">KAMERA ILE TARA</string>
+    <string name="btn_add_product">ÜRÜNÜ EKLE</string>
+    <string name="btn_finish">BİTİR</string>
+    <string name="no_products_scanned">Henüz ürün taranmadı.</string>
+    <string name="product_info">Ürün Bilgileri</string>
+    <string name="hint_quantity">Miktar</string>
 </resources>
