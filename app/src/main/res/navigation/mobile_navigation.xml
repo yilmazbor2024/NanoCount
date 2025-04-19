@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_login">
+
+    <!-- Global Action for Inventory Detail -->
+    <action
+        android:id="@+id/action_global_navigation_inventory_detail"
+        app:destination="@id/navigation_inventory_detail" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.barkodm.ui.auth.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.barkodm.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_inventory_new"
+            app:destination="@id/navigation_inventory_new" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_products"
+            app:destination="@id/navigation_products" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_inventory"
+        android:name="com.example.barkodm.ui.inventory.InventoryFragment"
+        android:label="@string/title_inventory"
+        tools:layout="@layout/fragment_inventory">
+        <action
+            android:id="@+id/action_inventory_to_inventory_new"
+            app:destination="@id/navigation_inventory_new" />
+        <action
+            android:id="@+id/action_inventory_to_inventory_detail"
+            app:destination="@id/navigation_inventory_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_inventory_new"
+        android:name="com.example.barkodm.ui.inventory.InventoryNewFragment"
+        android:label="@string/title_inventory_new"
+        tools:layout="@layout/fragment_inventory_new">
+        <action
+            android:id="@+id/action_inventory_new_to_inventory_scan"
+            app:destination="@id/navigation_inventory_scan" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_inventory_detail"
+        android:name="com.example.barkodm.ui.inventory.InventoryDetailFragment"
+        android:label="@string/title_inventory_detail"
+        tools:layout="@layout/fragment_inventory_detail">
+        <argument
+            android:name="inventoryId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_inventory_scan"
+        android:name="com.example.barkodm.ui.inventory.InventoryScanFragment"
+        android:label="@string/title_inventory_scan"
+        tools:layout="@layout/fragment_inventory_scan">
+        <argument
+            android:name="inventoryId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_definitions"
+        android:name="com.example.barkodm.ui.definitions.DefinitionsFragment"
+        android:label="@string/title_definitions"
+        tools:layout="@layout/fragment_definitions">
+        <action
+            android:id="@+id/action_definitions_to_products"
+            app:destination="@id/navigation_products" />
+        <action
+            android:id="@+id/action_definitions_to_locations"
+            app:destination="@id/navigation_locations" />
+        <action
+            android:id="@+id/action_definitions_to_users"
+            app:destination="@id/navigation_users" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.example.barkodm.ui.definitions.ProductsFragment"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_products_to_import"
+            app:destination="@id/navigation_product_import" />
+        <action
+            android:id="@+id/action_products_to_new"
+            app:destination="@id/navigation_product_new" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_product_import"
+        android:name="com.example.barkodm.ui.definitions.ProductImportFragment"
+        android:label="@string/title_product_import"
+        tools:layout="@layout/fragment_product_import" />
+
+    <fragment
+        android:id="@+id/navigation_product_new"
+        android:name="com.example.barkodm.ui.definitions.ProductNewFragment"
+        android:label="@string/title_product_new"
+        tools:layout="@layout/fragment_product_new" />
+
+    <fragment
+        android:id="@+id/navigation_locations"
+        android:name="com.example.barkodm.ui.definitions.LocationsFragment"
+        android:label="@string/title_locations"
+        tools:layout="@layout/fragment_locations" />
+
+    <fragment
+        android:id="@+id/navigation_users"
+        android:name="com.example.barkodm.ui.definitions.UsersFragment"
+        android:label="@string/title_users"
+        tools:layout="@layout/fragment_users" />
+
+    <fragment
+        android:id="@+id/navigation_reports"
+        android:name="com.example.barkodm.ui.reports.ReportsFragment"
+        android:label="@string/title_reports"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.barkodm.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Barkod Sayım</string>
+    <string name="title_home">Ana Sayfa</string>
+    <string name="title_inventory">Sayımlar</string>
+    <string name="title_definitions">Tanımlar</string>
+    <string name="title_reports">Raporlar</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="title_login">Giriş</string>
+    <string name="title_inventory_new">Yeni Sayım</string>
+    <string name="title_inventory_detail">Sayım Detay</string>
+    <string name="title_inventory_scan">Barkod Okut</string>
+    <string name="title_products">Ürünler</string>
+    <string name="title_product_import">Ürün İçe Aktar</string>
+    <string name="title_product_new">Yeni Ürün</string>
+    <string name="title_locations">Lokasyonlar</string>
+    <string name="title_users">Kullanıcılar</string>
+    
+    <!-- Giriş Ekranı -->
+    <string name="hint_username">Kullanıcı Adı</string>
+    <string name="hint_password">Şifre</string>
+    <string name="btn_login">Giriş</string>
+    <string name="error_login">Kullanıcı adı veya şifre hatalı</string>
+    
+    <!-- Ürün İçe Aktarma -->
+    <string name="btn_import_csv">CSV Dosyası Seç</string>
+    <string name="btn_import_excel">Excel Dosyası Seç</string>
+    <string name="btn_import_start">İçe Aktarmayı Başlat</string>
+    <string name="message_import_success">%1$d ürün başarıyla içe aktarıldı</string>
+    <string name="message_import_error">İçe aktarma sırasında hata oluştu: %1$s</string>
+    
+    <!-- Sayım Oluşturma -->
+    <string name="label_inventory_date">Sayım Tarihi</string>
+    <string name="label_inventory_type">Sayım Tipi</string>
+    <string name="inventory_type_controlled">Kontrollü Sayım</string>
+    <string name="inventory_type_uncontrolled">Kontrolsüz Sayım</string>
+    <string name="label_branch">Şube</string>
+    <string name="label_warehouse">Depo</string>
+    <string name="label_location">Lokasyon</string>
+    <string name="label_shelf">Raf</string>
+    <string name="label_read_mode">Barkod Okuma Şekli</string>
+    <string name="read_mode_continuous">Devamlı</string>
+    <string name="read_mode_quantity">Miktar Düzeltmeli</string>
+    <string name="label_reader_type">Barkod Okuyucu</string>
+    <string name="reader_type_camera">Kamera</string>
+    <string name="reader_type_scanner">Barkod Okuyucu</string>
+    <string name="btn_save_and_start">Kaydet ve Başla</string>
+    
+    <!-- Barkod Okutma -->
+    <string name="label_barcode">Barkod</string>
+    <string name="label_product_code">Ürün Kodu</string>
+    <string name="label_description">Açıklama</string>
+    <string name="label_unit">Birim</string>
+    <string name="label_quantity">Miktar</string>
+    <string name="btn_scan">Barkod Oku</string>
+    <string name="btn_add">Ekle</string>
+    <string name="error_product_not_found">Ürün bulunamadı: %1$s</string>
+    <string name="message_scan_success">%1$s (%2$s) eklendi</string>
+    
+    <!-- Genel -->
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_cancel">İptal</string>
+    <string name="btn_delete">Sil</string>
+    <string name="btn_update">Güncelle</string>
+    <string name="btn_export">Dışa Aktar</string>
+    <string name="message_success">İşlem başarılı</string>
+    <string name="message_error">Hata oluştu</string>
+</resources>
