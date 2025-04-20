@@ -10,7 +10,8 @@ data class Warehouse(
     val id: Int,
     val code: String,
     val name: String,
-    val branchId: Int
+    val branchId: Int,
+    val description: String? = null
 )
 
 data class Location(

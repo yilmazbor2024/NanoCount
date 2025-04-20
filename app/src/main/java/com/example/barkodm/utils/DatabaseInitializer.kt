@@ -3,7 +3,6 @@ package com.example.barkodm.utils
 import android.content.Context
 import com.example.barkodm.data.database.AppDatabase
 import com.example.barkodm.data.database.entity.UserEntity
-import com.example.barkodm.data.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -25,31 +24,34 @@ class DatabaseInitializer(private val context: Context) {
     }
 
     /**
-     * Kullanıcı tablosunun boş olup olmadığını kontrol eder ve boşsa
-     * varsayılan admin ve kullanıcı hesaplarını ekler.
+     * Varsayılan admin ve kullanıcı hesaplarını ekler.
      */
     private suspend fun initializeUsers() {
         val userDao = database.userDao()
         
-        // Kullanıcı tablosu boşsa, varsayılan kullanıcıları ekle
-        if (!userDao.hasAnyUser()) {
-            // Admin kullanıcısı
-            val adminUser = User(
-                id = 0,
-                username = "admin",
-                password = "admin123",
-                isAdmin = true
-            )
-            userDao.insert(UserEntity.fromUser(adminUser))
-            
-            // Normal kullanıcı
-            val normalUser = User(
-                id = 0,
-                username = "user",
-                password = "user123",
-                isAdmin = false
-            )
-            userDao.insert(UserEntity.fromUser(normalUser))
-        }
+        // Always add these users during development until we properly implement user management
+        // Admin kullanıcısı
+        val adminUser = UserEntity(
+            id = 0,
+            username = "admin",
+            email = "admin@example.com",
+            role = "admin",
+            password = "admin123",
+            createdAt = System.currentTimeMillis(),
+            updatedAt = System.currentTimeMillis()
+        )
+        userDao.insert(adminUser)
+        
+        // Normal kullanıcı
+        val normalUser = UserEntity(
+            id = 0,
+            username = "user",
+            email = "user@example.com",
+            role = "user",
+            password = "user123",
+            createdAt = System.currentTimeMillis(),
+            updatedAt = System.currentTimeMillis()
+        )
+        userDao.insert(normalUser)
     }
 } 

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.barkodm.data.database.dao.UserDao
-import com.example.barkodm.data.model.User
+import com.example.barkodm.data.database.entity.UserEntity
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val userDao: UserDao) : ViewModel() {
@@ -16,12 +16,12 @@ class LoginViewModel(private val userDao: UserDao) : ViewModel() {
     val loginResult: LiveData<LoginResult> = _loginResult
     
     // Aktif kullanıcı bilgisi
-    private val _currentUser = MutableLiveData<User?>()
-    val currentUser: LiveData<User?> = _currentUser
+    private val _currentUser = MutableLiveData<UserEntity?>()
+    val currentUser: LiveData<UserEntity?> = _currentUser
     
     // Giriş işlemi sonuç sınıfı
     sealed class LoginResult {
-        data class Success(val user: User) : LoginResult()
+        data class Success(val user: UserEntity) : LoginResult()
         data class Error(val message: String) : LoginResult()
     }
     
@@ -30,13 +30,17 @@ class LoginViewModel(private val userDao: UserDao) : ViewModel() {
      */
     fun login(username: String, password: String) {
         viewModelScope.launch {
-            val user = userDao.login(username, password)
-            
-            if (user != null) {
-                _currentUser.value = user.toUser()
-                _loginResult.value = LoginResult.Success(user.toUser())
-            } else {
-                _loginResult.value = LoginResult.Error("Kullanıcı adı veya şifre hatalı")
+            try {
+                val user = userDao.getUserByUsername(username)
+                
+                if (user != null && user.password == password) {
+                    _currentUser.value = user
+                    _loginResult.value = LoginResult.Success(user)
+                } else {
+                    _loginResult.value = LoginResult.Error("Kullanıcı adı veya şifre hatalı")
+                }
+            } catch (e: Exception) {
+                _loginResult.value = LoginResult.Error("Giriş sırasında hata oluştu: ${e.message}")
             }
         }
     }

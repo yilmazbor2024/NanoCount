@@ -42,7 +42,7 @@ class InventoryDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         
         // Fragment argümanlarından envanter ID'sini al
-        val inventoryId = args.inventoryId
+        val inventoryId = args.inventoryId.toLong()
         
         // ViewModel'e envanter ID'sini aktar
         viewModel.setInventoryId(inventoryId)

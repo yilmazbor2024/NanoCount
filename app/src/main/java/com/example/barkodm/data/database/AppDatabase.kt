@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.barkodm.data.database.converter.DateConverter
 import com.example.barkodm.data.database.dao.*
 import com.example.barkodm.data.database.entity.*
 
@@ -18,8 +20,9 @@ import com.example.barkodm.data.database.entity.*
         InventoryHeaderEntity::class,
         InventoryDetailEntity::class
     ],
-    version = 1
+    version = 5
 )
+@TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun productDao(): ProductDao

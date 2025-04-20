@@ -1,0 +1,40 @@
+# Barkodm Veritabanı Sorunları Çözüm Kılavuzu
+
+Projede veritabanı ile ilgili sorunlar tespit edildi. Bu sorunlar şunları içeriyor:
+
+1. `InventoryDetailEntity` sınıfında, `ForeignKey` kısmındaki `entity = InventoryEntity::class` yanlış, çünkü böyle bir sınıf yok. Bu `entity = InventoryHeaderEntity::class` olmalı.
+
+2. Tablo adları arasında tutarsızlık:
+   - `InventoryHeaderEntity.kt` dosyasında tablo adı "inventory_headers"
+   - `InventoryHeaderDao.kt` dosyasında sorgularda "inventory_header" kullanılmış
+
+3. Çakışan DAO tanımları:
+   - `InventoryDaos.kt` dosyasında hem InventoryHeaderDao hem de InventoryDetailDao sınıfları tanımlanmış
+   - Ayrıca `InventoryHeaderDao.kt` ve `InventoryDetailDao.kt` dosyalarında da aynı sınıflar ayrı ayrı tanımlanmış
+
+## Çözüm Adımları
+
+1. Öncelikle `InventoryDaos.kt` dosyası silinmeli, çünkü bu sınıflar ayrı dosyalarda zaten var.
+
+2. `InventoryDetailEntity` sınıfını düzelt:
+```kotlin
+@Entity(
+    tableName = "inventory_details",
+    foreignKeys = [
+        ForeignKey(
+            entity = InventoryHeaderEntity::class,  // Burayı değiştir
+            parentColumns = ["id"],
+            childColumns = ["inventoryId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    ...
+)
+```
+
+3. `InventoryHeaderDao.kt` dosyasında tablo adını güncelle:
+```kotlin
+@Query("SELECT * FROM inventory_headers ORDER BY createdAt DESC")  // header -> headers
+```
+
+Bu adımları uyguladıktan sonra, projenizdeki veritabanı sorunları çözülmüş olacaktır. Daha sonra projeyi derleyip test edebilirsiniz.

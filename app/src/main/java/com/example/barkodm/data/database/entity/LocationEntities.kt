@@ -48,13 +48,15 @@ data class WarehouseEntity(
     val id: Int = 0,
     val code: String,
     val name: String,
-    val branchId: Int
+    val branchId: Int,
+    val description: String? = null
 ) {
     fun toWarehouse(): Warehouse = Warehouse(
         id = id,
         code = code,
         name = name,
-        branchId = branchId
+        branchId = branchId,
+        description = description
     )
 
     companion object {
@@ -62,7 +64,8 @@ data class WarehouseEntity(
             id = warehouse.id,
             code = warehouse.code,
             name = warehouse.name,
-            branchId = warehouse.branchId
+            branchId = warehouse.branchId,
+            description = warehouse.description
         )
     }
 }

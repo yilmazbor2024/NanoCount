@@ -10,17 +10,23 @@ import com.example.barkodm.data.database.entity.UserEntity
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(userEntity: UserEntity): Long
+    suspend fun insert(user: UserEntity): Long
 
-    @Query("SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1")
-    suspend fun login(username: String, password: String): UserEntity?
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(users: List<UserEntity>): List<Long>
 
-    @Query("SELECT * FROM users WHERE id = :id")
-    fun getUserById(id: Int): LiveData<UserEntity>
-
-    @Query("SELECT * FROM users")
+    @Query("SELECT * FROM users ORDER BY username ASC")
     fun getAllUsers(): LiveData<List<UserEntity>>
 
-    @Query("SELECT EXISTS(SELECT 1 FROM users LIMIT 1)")
-    suspend fun hasAnyUser(): Boolean
+    @Query("SELECT * FROM users WHERE id = :id")
+    suspend fun getUserById(id: Int): UserEntity?
+
+    @Query("SELECT * FROM users WHERE username = :username LIMIT 1")
+    suspend fun getUserByUsername(username: String): UserEntity?
+
+    @Query("SELECT COUNT(*) FROM users")
+    fun getUserCount(): LiveData<Int>
+
+    @Query("DELETE FROM users WHERE id = :id")
+    suspend fun deleteUserById(id: Int): Int
 } 

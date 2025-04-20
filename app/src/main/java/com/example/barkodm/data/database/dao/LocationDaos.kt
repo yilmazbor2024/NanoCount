@@ -2,6 +2,7 @@ package com.example.barkodm.data.database.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -17,6 +18,9 @@ interface BranchDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(branches: List<BranchEntity>): List<Long>
+    
+    @Delete
+    suspend fun delete(branchEntity: BranchEntity): Int
 
     @Query("SELECT * FROM branches ORDER BY name ASC")
     fun getAllBranches(): LiveData<List<BranchEntity>>
@@ -32,9 +36,18 @@ interface WarehouseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(warehouses: List<WarehouseEntity>): List<Long>
+    
+    @Delete
+    suspend fun delete(warehouseEntity: WarehouseEntity): Int
 
     @Query("SELECT * FROM warehouses WHERE branchId = :branchId ORDER BY name ASC")
     fun getWarehousesByBranch(branchId: Int): LiveData<List<WarehouseEntity>>
+
+    @Query("SELECT * FROM warehouses ORDER BY name ASC")
+    fun getAllWarehouses(): LiveData<List<WarehouseEntity>>
+
+    @Query("DELETE FROM warehouses WHERE id = :id")
+    suspend fun deleteWarehouseById(id: Int): Int
 
     @Query("SELECT * FROM warehouses WHERE id = :id")
     suspend fun getWarehouseById(id: Int): WarehouseEntity?
@@ -47,7 +60,13 @@ interface LocationDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(locations: List<LocationEntity>): List<Long>
+    
+    @Delete
+    suspend fun delete(locationEntity: LocationEntity): Int
 
+    @Query("SELECT * FROM locations ORDER BY name ASC")
+    suspend fun getAllLocations(): List<LocationEntity>
+    
     @Query("SELECT * FROM locations WHERE warehouseId = :warehouseId ORDER BY name ASC")
     fun getLocationsByWarehouse(warehouseId: Int): LiveData<List<LocationEntity>>
 
@@ -62,6 +81,9 @@ interface ShelfDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(shelves: List<ShelfEntity>): List<Long>
+    
+    @Delete
+    suspend fun delete(shelfEntity: ShelfEntity): Int
 
     @Query("SELECT * FROM shelves WHERE locationId = :locationId ORDER BY name ASC")
     fun getShelvesByLocation(locationId: Int): LiveData<List<ShelfEntity>>

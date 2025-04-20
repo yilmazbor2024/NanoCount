@@ -1,0 +1,101 @@
+barcode,code,description,unit,stockQuantity
+8680100001001,CK001,Erkek Siyah Deri Ceket S Beden,ADET,15.0
+8680100001002,CK002,Erkek Siyah Deri Ceket M Beden,ADET,20.0
+8680100001003,CK003,Erkek Siyah Deri Ceket L Beden,ADET,18.0
+8680100001004,CK004,Erkek Kahverengi Deri Ceket M Beden,ADET,12.0
+8680100001005,CK005,Erkek Kahverengi Deri Ceket L Beden,ADET,10.0
+8680100001006,CK006,Kadın Kırmızı Deri Ceket S Beden,ADET,8.0
+8680100001007,CK007,Kadın Kırmızı Deri Ceket M Beden,ADET,12.0
+8680100001008,CK008,Kadın Siyah Deri Ceket S Beden,ADET,15.0
+8680100001009,CK009,Erkek Lacivert Spor Ceket 48 Beden,ADET,25.0
+8680100001010,CK010,Erkek Lacivert Spor Ceket 50 Beden,ADET,20.0
+8680100002001,PT001,Erkek Siyah Klasik Pantolon 30-32,ADET,30.0
+8680100002002,PT002,Erkek Siyah Klasik Pantolon 32-32,ADET,35.0
+8680100002003,PT003,Erkek Siyah Klasik Pantolon 34-32,ADET,25.0
+8680100002004,PT004,Erkek Lacivert Klasik Pantolon 30-32,ADET,20.0
+8680100002005,PT005,Erkek Lacivert Klasik Pantolon 32-32,ADET,28.0
+8680100002006,PT006,Erkek Gri Klasik Pantolon 32-32,ADET,22.0
+8680100002007,PT007,Erkek Gri Klasik Pantolon 34-32,ADET,18.0
+8680100002008,PT008,Kadın Siyah Kumaş Pantolon 36 Beden,ADET,24.0
+8680100002009,PT009,Kadın Siyah Kumaş Pantolon 38 Beden,ADET,28.0
+8680100002010,PT010,Kadın Siyah Kumaş Pantolon 40 Beden,ADET,22.0
+8680100003001,GM001,Erkek Beyaz Klasik Gömlek S Beden,ADET,40.0
+8680100003002,GM002,Erkek Beyaz Klasik Gömlek M Beden,ADET,45.0
+8680100003003,GM003,Erkek Beyaz Klasik Gömlek L Beden,ADET,42.0
+8680100003004,GM004,Erkek Mavi Klasik Gömlek M Beden,ADET,38.0
+8680100003005,GM005,Erkek Mavi Klasik Gömlek L Beden,ADET,36.0
+8680100003006,GM006,Erkek Çizgili Gömlek M Beden,ADET,32.0
+8680100003007,GM007,Erkek Çizgili Gömlek L Beden,ADET,30.0
+8680100003008,GM008,Kadın Beyaz Gömlek S Beden,ADET,35.0
+8680100003009,GM009,Kadın Beyaz Gömlek M Beden,ADET,38.0
+8680100003010,GM010,Kadın Mavi Gömlek S Beden,ADET,32.0
+8680100004001,TS001,Erkek Beyaz Basic Tişört S Beden,ADET,50.0
+8680100004002,TS002,Erkek Beyaz Basic Tişört M Beden,ADET,60.0
+8680100004003,TS003,Erkek Beyaz Basic Tişört L Beden,ADET,55.0
+8680100004004,TS004,Erkek Siyah Basic Tişört S Beden,ADET,48.0
+8680100004005,TS005,Erkek Siyah Basic Tişört M Beden,ADET,58.0
+8680100004006,TS006,Erkek Siyah Basic Tişört L Beden,ADET,52.0
+8680100004007,TS007,Kadın Beyaz V Yaka Tişört S Beden,ADET,45.0
+8680100004008,TS008,Kadın Beyaz V Yaka Tişört M Beden,ADET,50.0
+8680100004009,TS009,Kadın Siyah V Yaka Tişört S Beden,ADET,42.0
+8680100004010,TS010,Kadın Siyah V Yaka Tişört M Beden,ADET,48.0
+8680100005001,EL001,Kadın Siyah Mini Elbise S Beden,ADET,25.0
+8680100005002,EL002,Kadın Siyah Mini Elbise M Beden,ADET,28.0
+8680100005003,EL003,Kadın Kırmızı Mini Elbise S Beden,ADET,22.0
+8680100005004,EL004,Kadın Kırmızı Mini Elbise M Beden,ADET,24.0
+8680100005005,EL005,Kadın Çiçekli Yazlık Elbise S Beden,ADET,30.0
+8680100005006,EL006,Kadın Çiçekli Yazlık Elbise M Beden,ADET,35.0
+8680100005007,EL007,Kadın Uzun Abiye Elbise S Beden,ADET,18.0
+8680100005008,EL008,Kadın Uzun Abiye Elbise M Beden,ADET,20.0
+8680100005009,EL009,Kadın Uzun Abiye Elbise L Beden,ADET,15.0
+8680100005010,EL010,Kadın Denim Elbise M Beden,ADET,28.0
+8680100006001,ET001,Kadın Siyah Mini Etek 36 Beden,ADET,32.0
+8680100006002,ET002,Kadın Siyah Mini Etek 38 Beden,ADET,35.0
+8680100006003,ET003,Kadın Denim Mini Etek 36 Beden,ADET,30.0
+8680100006004,ET004,Kadın Denim Mini Etek 38 Beden,ADET,33.0
+8680100006005,ET005,Kadın Pileli Etek 36 Beden,ADET,28.0
+8680100006006,ET006,Kadın Pileli Etek 38 Beden,ADET,30.0
+8680100006007,ET007,Kadın Pileli Etek 40 Beden,ADET,25.0
+8680100006008,ET008,Kadın Kalem Etek 36 Beden,ADET,22.0
+8680100006009,ET009,Kadın Kalem Etek 38 Beden,ADET,24.0
+8680100006010,ET010,Kadın Kalem Etek 40 Beden,ADET,20.0
+8680100007001,KZ001,Erkek Lacivert Boğazlı Kazak S Beden,ADET,30.0
+8680100007002,KZ002,Erkek Lacivert Boğazlı Kazak M Beden,ADET,35.0
+8680100007003,KZ003,Erkek Lacivert Boğazlı Kazak L Beden,ADET,32.0
+8680100007004,KZ004,Erkek Gri Boğazlı Kazak M Beden,ADET,28.0
+8680100007005,KZ005,Erkek Gri Boğazlı Kazak L Beden,ADET,26.0
+8680100007006,KZ006,Kadın Kırmızı Boğazlı Kazak S Beden,ADET,25.0
+8680100007007,KZ007,Kadın Kırmızı Boğazlı Kazak M Beden,ADET,28.0
+8680100007008,KZ008,Kadın Bej V Yaka Kazak S Beden,ADET,22.0
+8680100007009,KZ009,Kadın Bej V Yaka Kazak M Beden,ADET,24.0
+8680100007010,KZ010,Kadın Siyah V Yaka Kazak S Beden,ADET,20.0
+8680100008001,HR001,Erkek Lacivert Hırka M Beden,ADET,25.0
+8680100008002,HR002,Erkek Lacivert Hırka L Beden,ADET,22.0
+8680100008003,HR003,Erkek Gri Hırka M Beden,ADET,20.0
+8680100008004,HR004,Erkek Gri Hırka L Beden,ADET,18.0
+8680100008005,HR005,Kadın Bej Hırka S Beden,ADET,28.0
+8680100008006,HR006,Kadın Bej Hırka M Beden,ADET,30.0
+8680100008007,HR007,Kadın Siyah Hırka S Beden,ADET,26.0
+8680100008008,HR008,Kadın Siyah Hırka M Beden,ADET,28.0
+8680100008009,HR009,Kadın Kırmızı Hırka S Beden,ADET,22.0
+8680100008010,HR010,Kadın Kırmızı Hırka M Beden,ADET,24.0
+8680100009001,AY001,Erkek Siyah Deri Ayakkabı 40 Numara,ADET,15.0
+8680100009002,AY002,Erkek Siyah Deri Ayakkabı 41 Numara,ADET,18.0
+8680100009003,AY003,Erkek Siyah Deri Ayakkabı 42 Numara,ADET,20.0
+8680100009004,AY004,Erkek Kahverengi Deri Ayakkabı 41 Numara,ADET,16.0
+8680100009005,AY005,Erkek Kahverengi Deri Ayakkabı 42 Numara,ADET,18.0
+8680100009006,AY006,Kadın Siyah Topuklu Ayakkabı 36 Numara,ADET,22.0
+8680100009007,AY007,Kadın Siyah Topuklu Ayakkabı 37 Numara,ADET,25.0
+8680100009008,AY008,Kadın Siyah Topuklu Ayakkabı 38 Numara,ADET,20.0
+8680100009009,AY009,Kadın Kırmızı Topuklu Ayakkabı 37 Numara,ADET,18.0
+8680100009010,AY010,Kadın Kırmızı Topuklu Ayakkabı 38 Numara,ADET,15.0
+8680100010001,AK001,Erkek Siyah Deri Kemer 95 cm,ADET,40.0
+8680100010002,AK002,Erkek Siyah Deri Kemer 100 cm,ADET,35.0
+8680100010003,AK003,Erkek Kahverengi Deri Kemer 95 cm,ADET,38.0
+8680100010004,AK004,Erkek Kahverengi Deri Kemer 100 cm,ADET,30.0
+8680100010005,AK005,Erkek Lacivert Kravat,ADET,45.0
+8680100010006,AK006,Erkek Bordo Kravat,ADET,42.0
+8680100010007,AK007,Erkek Siyah Çizgili Kravat,ADET,40.0
+8680100010008,AK008,Kadın Beyaz Şal,ADET,50.0
+8680100010009,AK009,Kadın Siyah Şal,ADET,48.0
+8680100010010,AK010,Kadın Renkli Desenli Şal,ADET,45.0

@@ -7,39 +7,36 @@ import com.example.barkodm.data.model.Product
 @Entity(tableName = "products")
 data class ProductEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val id: Long = 0,
     val barcode: String,
-    val productCode: String,
+    val code: String,
     val description: String,
     val unit: String,
-    val category: String?,
-    val price: Double?,
-    val stock: Double?,
-    val createdAt: Long
+    val stockQuantity: Double = 0.0,
+    val createdAt: Long = System.currentTimeMillis(),
+    val updatedAt: Long = System.currentTimeMillis()
 ) {
     fun toProduct(): Product = Product(
         id = id,
         barcode = barcode,
-        productCode = productCode,
+        code = code,
         description = description,
         unit = unit,
-        category = category,
-        price = price,
-        stock = stock,
-        createdAt = createdAt
+        stockQuantity = stockQuantity,
+        createdAt = createdAt,
+        updatedAt = updatedAt
     )
 
     companion object {
         fun fromProduct(product: Product): ProductEntity = ProductEntity(
             id = product.id,
             barcode = product.barcode,
-            productCode = product.productCode,
+            code = product.code,
             description = product.description,
             unit = product.unit,
-            category = product.category,
-            price = product.price,
-            stock = product.stock,
-            createdAt = product.createdAt
+            stockQuantity = product.stockQuantity,
+            createdAt = product.createdAt,
+            updatedAt = product.updatedAt
         )
     }
 } 

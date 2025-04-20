@@ -115,21 +115,144 @@
 
     <fragment
         android:id="@+id/navigation_product_new"
-        android:name="com.example.barkodm.ui.definitions.ProductNewFragment"
+        android:name="com.example.barkodm.ui.product.ProductNewFragment"
         android:label="@string/title_product_new"
-        tools:layout="@layout/fragment_product_new" />
+        tools:layout="@layout/fragment_product_new">
+        <action
+            android:id="@+id/action_productNewFragment_to_barcodeScannerFragment"
+            app:destination="@id/navigation_barcode_scanner" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_barcode_scanner"
+        android:name="com.example.barkodm.ui.barcode.BarcodeScannerFragment"
+        android:label="@string/title_barcode_scanner"
+        tools:layout="@layout/fragment_barcode_scanner" />
 
     <fragment
         android:id="@+id/navigation_locations"
         android:name="com.example.barkodm.ui.definitions.LocationsFragment"
         android:label="@string/title_locations"
-        tools:layout="@layout/fragment_locations" />
+        tools:layout="@layout/fragment_locations">
+        <action
+            android:id="@+id/action_locations_to_branch_list"
+            app:destination="@id/navigation_branch_list" />
+        <action
+            android:id="@+id/action_locations_to_warehouse_list"
+            app:destination="@id/navigation_warehouse_list" />
+        <action
+            android:id="@+id/action_locations_to_location_list"
+            app:destination="@id/navigation_location_list" />
+        <action
+            android:id="@+id/action_locations_to_shelf_list"
+            app:destination="@id/navigation_shelf_list" />
+    </fragment>
 
+    <!-- Branch management -->
+    <fragment
+        android:id="@+id/navigation_branch_list"
+        android:name="com.example.barkodm.ui.location.BranchListFragment"
+        android:label="@string/branches"
+        tools:layout="@layout/fragment_branch_list">
+        <action
+            android:id="@+id/action_branch_list_to_branch_edit"
+            app:destination="@id/navigation_branch_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_branch_edit"
+        android:name="com.example.barkodm.ui.location.BranchEditFragment"
+        android:label="@string/edit_branch"
+        tools:layout="@layout/fragment_branch_edit">
+        <argument
+            android:name="branchId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- Warehouse management -->
+    <fragment
+        android:id="@+id/navigation_warehouse_list"
+        android:name="com.example.barkodm.ui.location.WarehouseListFragment"
+        android:label="@string/warehouses"
+        tools:layout="@layout/fragment_warehouse_list">
+        <action
+            android:id="@+id/action_warehouse_list_to_warehouse_edit"
+            app:destination="@id/navigation_warehouse_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_warehouse_edit"
+        android:name="com.example.barkodm.ui.location.WarehouseEditFragment"
+        android:label="@string/edit_warehouse"
+        tools:layout="@layout/fragment_warehouse_edit">
+        <argument
+            android:name="warehouseId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- Location management -->
+    <fragment
+        android:id="@+id/navigation_location_list"
+        android:name="com.example.barkodm.ui.location.LocationListFragment"
+        android:label="@string/locations"
+        tools:layout="@layout/fragment_location_list">
+        <action
+            android:id="@+id/action_location_list_to_location_edit"
+            app:destination="@id/navigation_location_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_location_edit"
+        android:name="com.example.barkodm.ui.location.LocationEditFragment"
+        android:label="@string/edit_location"
+        tools:layout="@layout/fragment_location_edit">
+        <argument
+            android:name="locationId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- Shelf management -->
+    <fragment
+        android:id="@+id/navigation_shelf_list"
+        android:name="com.example.barkodm.ui.location.ShelfListFragment"
+        android:label="@string/shelves"
+        tools:layout="@layout/fragment_shelf_list">
+        <action
+            android:id="@+id/action_shelf_list_to_shelf_edit"
+            app:destination="@id/navigation_shelf_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_shelf_edit"
+        android:name="com.example.barkodm.ui.location.ShelfEditFragment"
+        android:label="@string/edit_shelf"
+        tools:layout="@layout/fragment_shelf_edit">
+        <argument
+            android:name="shelfId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- User management -->
     <fragment
         android:id="@+id/navigation_users"
         android:name="com.example.barkodm.ui.definitions.UsersFragment"
         android:label="@string/title_users"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_users_to_user_edit"
+            app:destination="@id/navigation_user_edit" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/navigation_user_edit"
+        android:name="com.example.barkodm.ui.user.UserEditFragment"
+        android:label="Kullanıcı Ekle/Düzenle"
+        tools:layout="@layout/fragment_user_edit">
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_reports"

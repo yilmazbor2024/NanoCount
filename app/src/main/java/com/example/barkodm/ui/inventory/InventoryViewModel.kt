@@ -14,9 +14,21 @@ class InventoryViewModel(private val inventoryHeaderDao: InventoryHeaderDao) : V
     val inventoryHeaders: LiveData<List<InventoryHeaderEntity>> = inventoryHeaderDao.getAllInventories()
     
     // Sayım durumunu güncelle (Tamamlandı, İptal edildi)
-    fun updateInventoryStatus(inventoryId: Int, status: String) {
+    fun updateInventoryStatus(inventoryId: Long, status: String) {
         viewModelScope.launch {
             inventoryHeaderDao.updateStatus(inventoryId, status)
+        }
+    }
+    
+    // Yeni sayım oluşturma
+    fun createInventory(header: InventoryHeaderEntity, callback: (Boolean, Long) -> Unit) {
+        viewModelScope.launch {
+            try {
+                val id = inventoryHeaderDao.insert(header)
+                callback(true, id)
+            } catch (e: Exception) {
+                callback(false, -1L)
+            }
         }
     }
 }

@@ -7,18 +7,29 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.barkodm.data.preferences.UserPreferences
 import com.example.barkodm.databinding.ActivityMainBinding
+import com.example.barkodm.ui.common.KVKKConsentDialog
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    
+    @Inject
+    lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Show KVKK consent dialog if needed
+        checkAndShowKVKKConsent()
 
         val navView = binding.navView
         navController = findNavController(R.id.nav_host_fragment_activity_main)
@@ -52,6 +63,18 @@ class MainActivity : AppCompatActivity() {
         
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    
+    private fun checkAndShowKVKKConsent() {
+        // Show KVKK consent dialog if user hasn't accepted it yet
+        KVKKConsentDialog.showIfNeeded(
+            this,
+            supportFragmentManager,
+            userPreferences
+        ) {
+            // This callback will be called when user accepts the consent
+            // No need to do anything special, just continue with app initialization
+        }
     }
     
     override fun onSupportNavigateUp(): Boolean {

@@ -12,11 +12,11 @@ class InventoryDetailViewModel(
     private val inventoryDetailDao: InventoryDetailDao
 ) : ViewModel() {
 
-    private val _inventoryId = MutableLiveData<Int>()
+    private val _inventoryId = MutableLiveData<Long>()
     
     // ID'si belirtilen sayımın header bilgisi
     val inventoryHeader: LiveData<InventoryHeaderEntity> = _inventoryId.switchMap { id ->
-        inventoryHeaderDao.getInventoryWithIdLiveData(id)
+        inventoryHeaderDao.getInventoryById(id)
     }
     
     // ID'si belirtilen sayımın detayları
@@ -25,17 +25,17 @@ class InventoryDetailViewModel(
     }
     
     // Toplam miktar
-    val totalQuantity: LiveData<Double> = _inventoryId.switchMap { id ->
-        inventoryDetailDao.getTotalQuantity(id)
+    val totalQuantity: LiveData<Double?> = _inventoryId.switchMap { id ->
+        inventoryDetailDao.getTotalQuantityByHeaderId(id)
     }
     
     // Benzersiz ürün sayısı
-    val uniqueProductCount: LiveData<Int> = _inventoryId.switchMap { id ->
-        inventoryDetailDao.getUniqueProductCount(id)
+    val uniqueProductCount: LiveData<Int?> = _inventoryId.switchMap { id ->
+        inventoryDetailDao.getProductCountByHeaderId(id)
     }
     
     // İşlem yapmak için envanter ID'sini ayarla
-    fun setInventoryId(id: Int) {
+    fun setInventoryId(id: Long) {
         if (_inventoryId.value != id) {
             _inventoryId.value = id
         }

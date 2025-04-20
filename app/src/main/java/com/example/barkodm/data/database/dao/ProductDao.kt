@@ -18,12 +18,15 @@ interface ProductDao {
     @Query("SELECT * FROM products WHERE barcode = :barcode LIMIT 1")
     suspend fun getProductByBarcode(barcode: String): ProductEntity?
 
+    @Query("SELECT * FROM products WHERE code = :code LIMIT 1")
+    suspend fun getProductByCode(code: String): ProductEntity?
+
     @Query("SELECT * FROM products ORDER BY description ASC")
     fun getAllProducts(): LiveData<List<ProductEntity>>
 
     @Query("SELECT COUNT(*) FROM products")
     fun getProductCount(): LiveData<Int>
 
-    @Query("SELECT * FROM products WHERE productCode LIKE :searchQuery OR description LIKE :searchQuery OR barcode LIKE :searchQuery")
+    @Query("SELECT * FROM products WHERE code LIKE '%' || :searchQuery || '%' OR description LIKE '%' || :searchQuery || '%' OR barcode LIKE '%' || :searchQuery || '%'")
     fun searchProducts(searchQuery: String): LiveData<List<ProductEntity>>
 } 

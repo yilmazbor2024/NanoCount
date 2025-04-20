@@ -1,13 +1,15 @@
 package com.example.barkodm.data.model
 
+/**
+ * Ürün modeli
+ */
 data class Product(
-    val id: Int,
+    val id: Long = 0,
     val barcode: String,
-    val productCode: String,
+    val code: String,
     val description: String,
     val unit: String,
-    val category: String? = null,
-    val price: Double? = null,
-    val stock: Double? = null,
-    val createdAt: Long = System.currentTimeMillis()
+    val stockQuantity: Double,
+    val createdAt: Long,
+    val updatedAt: Long
 ) 

@@ -1,0 +1,1 @@
+// Bu dosyayı kaldırıyoruz, yerine model/SubscriptionPlan.kt ve model/SubscriptionStatus.kt kullanacağız 
